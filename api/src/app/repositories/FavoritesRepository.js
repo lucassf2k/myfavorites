@@ -18,7 +18,7 @@ class FavoritesRepository {
       SELECT favorites.*, categories.name AS category_name
       FROM favorites
       LEFT JOIN categories ON categories.id = favorites.category_id
-      WHERE id = $1
+      WHERE favorites.id = $1
     `, [id]);
 
     return row;
@@ -31,15 +31,7 @@ class FavoritesRepository {
       WHERE name = $1
     `, [name]);
 
-    const customRow = {
-      id: row.id,
-      name: row.name.toLowerCase(),
-      rating: row.rating,
-      note: row.note,
-      category_id: row.category_id,
-    };
-
-    return customRow;
+    return row;
   }
 
   async save({
@@ -62,7 +54,7 @@ class FavoritesRepository {
       SET name = $1, rating = $2, note = $3, category_id = $4
       WHERE id = $5
       RETURNING *
-    `[name, rating, note, category_id, id]);
+    `, [name, rating, note, category_id, id]);
 
     return row;
   }
