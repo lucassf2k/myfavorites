@@ -14,7 +14,7 @@ class CategoriesRepository {
     const [row] = await db.Query(`
       INSERT INTO categories(name)
       VALUES($1)
-      RETURNIN *
+      RETURNING *
     `, [name]);
 
     return row;
