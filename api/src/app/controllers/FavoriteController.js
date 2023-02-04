@@ -25,13 +25,10 @@ class FavoriteController {
     } = request.body;
 
     if (!name) {
-      return response.status(400).json({ error: 'Name is requires' });
+      return response.status(400).json({ error: 'Name is required' });
     }
     if (!rating) {
       return response.status(400).json({ error: 'Rating is required' });
-    }
-    if (!note) {
-      return response.status(400).json({ error: 'Note is required' });
     }
 
     const favoriteExists = await favoritesRepository.findByName({ name });
@@ -54,10 +51,10 @@ class FavoriteController {
     } = request.body;
 
     if (!name) {
-      return response.status(400).json({ error: 'Name is requires' });
+      return response.status(400).json({ error: 'Name is required' });
     }
     if (!rating) {
-      return response.status(400).json({ error: 'Rating is requires' });
+      return response.status(400).json({ error: 'Rating is required' });
     }
 
     const favoriteExists = await favoritesRepository.findById({ id });
