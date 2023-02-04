@@ -17,5 +17,6 @@ module.exports = {
     camelcase: 'off',
     'no-sequences': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
   },
 };
