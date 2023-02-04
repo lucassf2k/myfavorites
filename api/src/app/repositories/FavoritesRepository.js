@@ -6,7 +6,7 @@ class FavoritesRepository {
     const rows = await db.Query(`
       SELECT favorites.*, categories.name AS category_name
       FROM favorites
-      LEFT JOIN categories ON categories.id = favorites.id
+      LEFT JOIN categories ON categories.id = favorites.category_id
       ORDER BY favorites.name ${direction}
     `);
 
