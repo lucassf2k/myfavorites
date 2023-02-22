@@ -1,8 +1,8 @@
-const db = require('../../database');
+import { Query } from '../../database/index.js';
 
 class CategoriesRepository {
   async findAll() {
-    const rows = await db.Query(`
+    const rows = await Query(`
       SELECT * FROM categories
       ORDER BY name
     `);
@@ -11,7 +11,7 @@ class CategoriesRepository {
   }
 
   async save({ name }) {
-    const [row] = await db.Query(`
+    const [row] = await Query(`
       INSERT INTO categories(name)
       VALUES($1)
       RETURNING *
@@ -22,4 +22,4 @@ class CategoriesRepository {
 }
 
 const categoriesRepository = new CategoriesRepository();
-module.exports = { categoriesRepository };
+export { categoriesRepository };

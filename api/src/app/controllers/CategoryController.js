@@ -1,4 +1,4 @@
-const { categoriesRepository } = require('../repositories/CategoriesRepository');
+import { categoriesRepository } from '../repositories/CategoriesRepository.js';
 
 class CategoryController {
   async index(request, response) {
@@ -19,4 +19,4 @@ class CategoryController {
 }
 
 const categoryController = new CategoryController();
-module.exports = { categoryController };
+export { categoryController };

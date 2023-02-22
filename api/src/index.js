@@ -1,14 +1,14 @@
-require('dotenv').config();
-const express = require('express');
+import('dotenv').config;
+import express from 'express';
 
-const { router: routes } = require('./routes');
-const { errorHandler } = require('./app/helpers/errorHandler');
+import { router } from './routes.js';
+import { errorHandler } from './app/helpers/errorHandler.js';
 
 function main() {
   const app = express();
 
   app.use(express.json());
-  app.use(routes);
+  app.use(router);
   app.use(errorHandler);
 
   app.listen(
