@@ -1,9 +1,9 @@
-const db = require('../../database');
+import { Query } from '../../database/index.js';
 
 class FavoritesRepository {
   async findAll({ orderBy = 'ASC' }) {
     const direction = orderBy.toUpperCase() === 'DESC' ? 'DESC' : 'ASC';
-    const rows = await db.Query(`
+    const rows = await Query(`
       SELECT favorites.*, categories.name AS category_name
       FROM favorites
       LEFT JOIN categories ON categories.id = favorites.category_id
@@ -14,7 +14,7 @@ class FavoritesRepository {
   }
 
   async findById({ id }) {
-    const [row] = await db.Query(`
+    const [row] = await Query(`
       SELECT favorites.*, categories.name AS category_name
       FROM favorites
       LEFT JOIN categories ON categories.id = favorites.category_id
@@ -25,7 +25,7 @@ class FavoritesRepository {
   }
 
   async findByName({ name }) {
-    const [row] = await db.Query(`
+    const [row] = await Query(`
       SELECT *
       FROM favorites
       WHERE name = $1
@@ -37,7 +37,7 @@ class FavoritesRepository {
   async save({
     name, rating, note, category_id,
   }) {
-    const [row] = await db.Query(`
+    const [row] = await Query(`
       INSERT INTO favorites(name, rating, note, category_id)
       VALUES($1, $2, $3, $4)
       RETURNING *
@@ -49,7 +49,7 @@ class FavoritesRepository {
   async update(id, {
     name, rating, note, category_id,
   }) {
-    const [row] = await db.Query(`
+    const [row] = await Query(`
       UPDATE favorites
       SET name = $1, rating = $2, note = $3, category_id = $4
       WHERE id = $5
@@ -60,7 +60,7 @@ class FavoritesRepository {
   }
 
   async delete({ id }) {
-    const deleteOp = await db.Query(`
+    const deleteOp = await Query(`
       DELETE FROM favorites
       WHERE id = $1
     `, [id]);
@@ -70,4 +70,4 @@ class FavoritesRepository {
 }
 
 const favoritesRepository = new FavoritesRepository();
-module.exports = { favoritesRepository };
+export { favoritesRepository };

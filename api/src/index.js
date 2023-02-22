@@ -1,16 +1,19 @@
-require('dotenv').config();
-const express = require('express');
+import('dotenv').config;
+import express from 'express';
 
-const { router: routes } = require('./routes');
-const { errorHandler } = require('./app/helpers/errorHandler');
+import { router } from './routes.js';
+import { errorHandler } from './app/helpers/errorHandler.js';
 
-const app = express();
+function main() {
+  const app = express();
 
-app.use(express.json());
-app.use(routes);
-app.use(errorHandler);
+  app.use(express.json());
+  app.use(router);
+  app.use(errorHandler);
 
-app.listen(
-  process.env.NODE_PORT || 3333,
-  () => console.log('🚀 Server is running on http://localhost:3333'),
-);
+  app.listen(
+    process.env.NODE_PORT || 3333,
+    () => console.log('🚀 Server is running on http://localhost:3333'),
+  );
+}
+main();

@@ -1,4 +1,4 @@
-const { favoritesRepository } = require('../repositories/FavoritesRepository');
+import { favoritesRepository } from '../repositories/FavoritesRepository.js';
 
 class FavoriteController {
   async index(request, response) {
@@ -82,4 +82,4 @@ class FavoriteController {
 }
 
 const favoriteController = new FavoriteController();
-module.exports = { favoriteController };
+export { favoriteController };

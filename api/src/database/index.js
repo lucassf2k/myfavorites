@@ -1,4 +1,6 @@
-const { Client } = require('pg');
+import pkg from 'pg';
+
+const { Client } = pkg;
 
 const client = new Client({
   host: process.env.DB_HOST || 'localhost',
@@ -17,4 +19,4 @@ async function Query(query, values) {
   return rows;
 }
 
-module.exports = { Query };
+export { Query };

@@ -1,7 +1,7 @@
-const { Router } = require('express');
+import { Router } from 'express';
 
-const { favoriteController } = require('./app/controllers/FavoriteController');
-const { categoryController } = require('./app/controllers/CategoryController');
+import { categoryController } from './app/controllers/CategoryController.js';
+import { favoriteController } from './app/controllers/FavoriteController.js';
 
 const router = Router();
 
@@ -14,4 +14,4 @@ router.delete('/favorites/:id', favoriteController.delete);
 router.get('/categories', categoryController.index);
 router.post('/categories', categoryController.store);
 
-module.exports = { router };
+export { router };
