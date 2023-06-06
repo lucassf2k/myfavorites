@@ -4,7 +4,7 @@ import GlobalStyles from "../../assets/styles/globals"
 import defaultTheme from "../../assets/styles/themes/default"
 
 import { Header } from "../Header"
-import { Contacts } from "../Contacts"
+import { Favorites } from "../Favorites"
 
 import * as SC from "./styles"
 
@@ -14,7 +14,7 @@ function App() {
       <GlobalStyles />
       <SC.Container>
         <Header />
-        <Contacts.List />
+        <Favorites.List />
       </SC.Container>
     </ThemeProvider>
   )

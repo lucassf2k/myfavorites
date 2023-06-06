@@ -12,6 +12,17 @@ export default createGlobalStyle`
     font-family: "Sora", sans-serif;
   }
 
+  ::-webkit-scrollbar {
+    background: transparent;
+    width: 8px;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.inputBackground};
+    border-radius: 8px;
+  }
+
   body {
     background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};

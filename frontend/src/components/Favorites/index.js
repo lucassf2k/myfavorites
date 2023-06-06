@@ -1,4 +1,4 @@
 import { List } from "./List"
-export const Contacts = {
+export const Favorites = {
   List,
 }
