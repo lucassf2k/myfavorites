@@ -13,17 +13,17 @@ export default createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.backgroundColor};
-    color: ${({ theme }) => theme.textColor};
+    background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
     font-size: 1.6rem;
   }
 
   h1, h2, h3, h4, strong {
-    color: ${({ theme }) => theme.titleColor}
+    color: ${({ theme }) => theme.colors.title}
   }
 
   input, textarea, select {
-    color: ${({ theme }) => theme.inputColor}
+    color: ${({ theme }) => theme.colors.input}
   }
 
   button {
