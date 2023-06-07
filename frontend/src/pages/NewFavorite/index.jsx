@@ -1,13 +1,21 @@
 import { Form } from "../../components/Form"
 import { Page } from "../../components/Page"
 
-import * as SC from "./styles"
-
 export function NewFavorite() {
   return (
-    <SC.Container>
+    <Form.Container>
       <Page.Header title="Novo favorito" />
       <Form.Input placeholder="Nome" />
-    </SC.Container>
+      <Form.Select>
+        <option value="123">Anime</option>
+        <option value="123">Anime</option>
+        <option value="123">Anime</option>
+        <option value="123">Anime</option>
+      </Form.Select>
+      <Form.Button type="button">Cadastrar</Form.Button>
+      <Form.Button type="button" disabled>
+        Cadastrar
+      </Form.Button>
+    </Form.Container>
   )
 }

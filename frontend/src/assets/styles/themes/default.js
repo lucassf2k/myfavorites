@@ -1,9 +1,9 @@
 export default {
   colors: {
     primary: {
-      light: "#5C2B46",
+      light: "#dc3d93",
       main: "#CD2580",
-      dark: "#49002C",
+      dark: "#98195e",
     },
     background: "#0F0E15",
     text: "#B0ABAB",
@@ -12,5 +12,6 @@ export default {
     input: "#E9E9E9",
     inputBackground: "#1D1C26",
     alert: "#FF1B1B",
+    buttonInactive: "#383649",
   },
 }
