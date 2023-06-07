@@ -34,7 +34,7 @@ export default createGlobalStyle`
   }
 
   input, textarea, select {
-    color: ${({ theme }) => theme.colors.input}
+    color: ${({ theme }) => theme.colors.input};
   }
 
   button {
