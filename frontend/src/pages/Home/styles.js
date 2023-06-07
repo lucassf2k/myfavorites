@@ -82,8 +82,8 @@ export const Card = styled.div`
       display: flex;
       align-items: center;
       .favorite-details {
-        background: ${({ theme }) => theme.colors.primary.light};
-        color: ${({ theme }) => theme.colors.primary.main};
+        background: ${({ theme }) => theme.colors.primary.dark};
+        color: #1d0017;
         font-weight: bold;
         text-transform: uppercase;
         padding: 0.4rem 0.8rem;
