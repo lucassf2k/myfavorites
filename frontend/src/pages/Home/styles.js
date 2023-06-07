@@ -3,10 +3,31 @@ import styled from "styled-components"
 export const Contaienr = styled.div`
   margin-top: 3.2rem;
 `
+
+export const InputSearchContainer = styled.div`
+  width: 100%;
+  input {
+    width: 100%;
+    background: ${({ theme }) => theme.colors.inputBackground};
+    border: none;
+    border-radius: 2.5rem;
+    height: 5rem;
+    outline: 0;
+    padding: 0 1.6rem;
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.placeholder};
+    }
+    &:focus {
+      border: 2px solid ${({ theme }) => theme.colors.primary.main};
+    }
+  }
+`
+
 export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 3.2rem;
   strong {
     font-size: 2.4rem;
   }
@@ -68,6 +89,7 @@ export const Card = styled.div`
         padding: 0.4rem 0.8rem;
         border-radius: 5rem;
         margin-left: 0.8rem;
+        font-size: 1.4rem;
         small + small {
           margin-left: 0.4rem;
         }

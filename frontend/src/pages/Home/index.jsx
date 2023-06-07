@@ -1,12 +1,15 @@
 import * as SC from "./styles"
 
-import arrowIcon from "../../../assets/images/icons/arrow.svg"
-import editIcon from "../../../assets/images/icons/edit.svg"
-import trashIcon from "../../../assets/images/icons/trash.svg"
+import arrowIcon from "../../assets/images/icons/arrow.svg"
+import editIcon from "../../assets/images/icons/edit.svg"
+import trashIcon from "../../assets/images/icons/trash.svg"
 
-export function List() {
+export function Home() {
   return (
     <SC.Contaienr>
+      <SC.InputSearchContainer>
+        <input type="text" placeholder="Pesquise pelo nome..." />
+      </SC.InputSearchContainer>
       <SC.Header>
         <strong>3 favoritos</strong>
         <a href="/">Novo favorito</a>
