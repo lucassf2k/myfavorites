@@ -11,8 +11,8 @@ export function FavoriteForm({ buttonlabel }) {
       <FormGroup>
         <Form.Input placeholder="Nome" />
       </FormGroup>
-      <FormGroup>
-        <Form.Input placeholder="Avaliação" />
+      <FormGroup error="Deve ter no máximo 30 caracteres">
+        <Form.Input placeholder="Avaliação" error />
       </FormGroup>
       <FormGroup>
         <Form.Input placeholder="Comentário" />
