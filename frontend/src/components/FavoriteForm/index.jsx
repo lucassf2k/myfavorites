@@ -44,7 +44,7 @@ export function FavoriteForm({ buttonlabel }) {
   }
 
   return (
-    <S.Form onSubmit={handleSumit}>
+    <S.Form onSubmit={handleSumit} noValidate>
       <FormGroup error={getErrorMessageByFieldName("name")}>
         <Form.Input
           type="email"
