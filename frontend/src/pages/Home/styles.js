@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Contaienr = styled.div`
+export const Container = styled.div`
   margin-top: 3.2rem;
 `
 
@@ -94,6 +94,10 @@ export const Card = styled.div`
           margin-left: 0.4rem;
         }
       }
+    }
+    h6 {
+      color: ${({ theme }) => theme.colors.primary.main};
+      margin: 0.8rem 0;
     }
     p {
       width: 100%;

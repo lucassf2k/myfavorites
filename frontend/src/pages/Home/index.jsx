@@ -7,7 +7,7 @@ import trashIcon from "../../assets/images/icons/trash.svg"
 
 export function Home() {
   return (
-    <S.Contaienr>
+    <S.Container>
       <S.InputSearchContainer>
         <input type="text" placeholder="Pesquise pelo nome..." />
       </S.InputSearchContainer>
@@ -27,10 +27,10 @@ export function Home() {
             <div className="favorite-name">
               <strong>Naruto</strong>
               <div className="favorite-details">
-                <small>8.5</small>
                 <small>anime</small>
               </div>
             </div>
+            <h6>ESPETACULAR</h6>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sed
               nam necessitatibus laudantium dolorem eum adipiSi voluptatum nulla
@@ -55,6 +55,6 @@ export function Home() {
           </div>
         </S.Card>
       </S.ListContainer>
-    </S.Contaienr>
+    </S.Container>
   )
 }
