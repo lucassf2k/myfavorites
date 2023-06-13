@@ -13,7 +13,8 @@ export function FavoriteForm({ buttonlabel }) {
   const [rating, setRating] = useState("")
   const [note, setNote] = useState("")
   const [category, setCategory] = useState("")
-  const { setError, removeError, getErrorMessageByFieldName } = useErrors()
+  const { errors, setError, removeError, getErrorMessageByFieldName } =
+    useErrors()
 
   function handleNameChange(event) {
     setName(event.target.value)
@@ -33,6 +34,8 @@ export function FavoriteForm({ buttonlabel }) {
     }
   }
 
+  const isFormValid = name && errors.length === 0
+
   function handleSumit(event) {
     event.preventDefault()
     console.log({
@@ -47,9 +50,8 @@ export function FavoriteForm({ buttonlabel }) {
     <S.Form onSubmit={handleSumit} noValidate>
       <FormGroup error={getErrorMessageByFieldName("name")}>
         <Form.Input
-          type="email"
           error={getErrorMessageByFieldName("name")}
-          placeholder="Nome"
+          placeholder="Nome *"
           value={name}
           onChange={handleNameChange}
         />
@@ -80,7 +82,9 @@ export function FavoriteForm({ buttonlabel }) {
         </Form.Select>
       </FormGroup>
       <S.ButtonContainer>
-        <Form.Button type="submit">{buttonlabel}</Form.Button>
+        <Form.Button type="submit" disabled={!isFormValid}>
+          {buttonlabel}
+        </Form.Button>
       </S.ButtonContainer>
     </S.Form>
   )
