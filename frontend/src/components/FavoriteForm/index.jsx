@@ -47,6 +47,7 @@ export function FavoriteForm({ buttonlabel }) {
     <S.Form onSubmit={handleSumit}>
       <FormGroup error={getErrorMessageByFieldName("name")}>
         <Form.Input
+          type="email"
           error={getErrorMessageByFieldName("name")}
           placeholder="Nome"
           value={name}
