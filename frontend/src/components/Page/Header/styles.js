@@ -2,6 +2,9 @@ import styled from "styled-components"
 
 export const Container = styled.header`
   margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   a {
     width: 9rem;
     text-decoration: none;
