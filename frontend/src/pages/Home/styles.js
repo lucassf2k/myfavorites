@@ -46,23 +46,24 @@ export const Header = styled.header`
   }
 `
 
-export const ListContainer = styled.div`
+export const ListHeader = styled.header`
   margin-top: 2.4rem;
-  header {
-    margin-bottom: 2.4rem;
-    button {
-      background: transparent;
-      border: none;
-      display: flex;
-      align-items: center;
-      span {
-        margin-right: 0.8rem;
-        font-weight: bold;
-        color: ${({ theme }) => theme.colors.primary.main};
-      }
-      img {
-        width: 2.2rem;
-      }
+  margin-bottom: 2.4rem;
+  button {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    span {
+      margin-right: 0.8rem;
+      font-weight: bold;
+      color: ${({ theme }) => theme.colors.primary.main};
+    }
+    img {
+      width: 2.2rem;
+      transform: ${({ orderBy }) =>
+        orderBy === "asc" ? "rotate(180deg)" : "rotate(0deg)"};
+      transition: transform 0.2s ease-in;
     }
   }
 `
