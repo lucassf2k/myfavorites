@@ -5,7 +5,6 @@ import * as S from "./styles"
 import arrowIcon from "../../assets/images/icons/arrow.svg"
 import editIcon from "../../assets/images/icons/edit.svg"
 import trashIcon from "../../assets/images/icons/trash.svg"
-
 import { Loader } from "../../components/Loader"
 import { favoritesService } from "../../services/FavoritesService"
 
@@ -25,9 +24,10 @@ export function Home() {
     async function fetchData() {
       try {
         setIsLoading(true)
-        setFavorites(await favoritesService.listFavorites())
+        const favorites = await favoritesService.listFavorites()
+        setFavorites(favorites)
       } catch (error) {
-        console.log(`error: ${error}`)
+        console.log(error)
       } finally {
         setIsLoading(false)
       }

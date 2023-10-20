@@ -8,7 +8,7 @@ class FavoritesService {
   }
 
   async listFavorites(orderBy = "asc") {
-    return this.#httpClient.get(`/favorites?orderBy=${orderBy}`)
+    return this.#httpClient.get(`/favoritess?orderBy=${orderBy}`)
   }
 
   async createFavorite(favorite) {
